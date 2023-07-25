@@ -17,18 +17,18 @@ public class UserView {
         Commands com;
 
         while (true) {
-            String command = prompt("Введите команду: ");
+            String command = prompt("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ");
             com = Commands.valueOf(command);
             if (com == Commands.EXIT) return;
             switch (com) {
                 case CREATE:
-                    String firstName = prompt("Имя: ");
-                    String lastName = prompt("Фамилия: ");
-                    String phone = prompt("Номер телефона: ");
+                    String firstName = prompt("пїЅпїЅпїЅ: ");
+                    String lastName = prompt("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ");
+                    String phone = prompt("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ");
                     userController.saveUser(new User(firstName, lastName, phone));
                     break;
                 case READ:
-                    String id = prompt("Идентификатор пользователя: ");
+                    String id = prompt("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ");
                     try {
                         User user = userController.readUser(Long.parseLong(id));
                         System.out.println(user);
@@ -42,8 +42,9 @@ public class UserView {
     }
 
     private String prompt(String message) {
-        Scanner in = new Scanner(System.in);
-        System.out.print(message);
-        return in.nextLine();
+        try (Scanner in = new Scanner(System.in)) {
+            System.out.print(message);
+            return in.nextLine();
+        }
     }
 }
