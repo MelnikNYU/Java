@@ -1,16 +1,18 @@
 package OOP.Lesson_5.Seminar.homework.controller;
 
-import personal.model.Fields;
-import personal.model.Repository;
-import personal.model.User;
-import personal.utils.Validate;
+
 
 import java.util.List;
 
+import OOP.Lesson_5.Seminar.homework.User;
+import OOP.Lesson_5.Seminar.homework.Repository.Repository;
+import OOP.Lesson_5.Seminar.homework.model.Fields;
+import OOP.Lesson_5.Seminar.homework.utils.Validate;
+
 public class ControllerUser {
-    private final Repository repository;
-    private final Validate validate;
-    public UserController(Repository repository, Validate validate) {
+    private Repository repository;
+    private Validate validate;
+    public void UserController(Repository repository, Validate validate) {
         this.repository = repository;
         this.validate = validate;
     }

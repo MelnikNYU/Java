@@ -3,9 +3,10 @@ package OOP.Lesson_5.Seminar.homework.View;
 import java.util.Scanner;
 
 import OOP.Lesson_5.Seminar.homework.model.Fields;
-import OOP.Lesson_5.Seminar.src.notebook.controller.UserController;
-import OOP.Lesson_5.Seminar.src.notebook.util.Commands;
+import OOP.Lesson_5.Seminar.homework.utils.Commands;
 import notebook.model.User;
+import OOP.Lesson_5.Seminar.homework.controller.ControllerUser;
+import OOP.Lesson_5.Seminar.homework.utils.Validate;
 
 public class UserView {
     private final ControllerUser ControllerUser;

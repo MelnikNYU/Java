@@ -3,20 +3,25 @@ package OOP.Lesson_5.Seminar.homework.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import OOP.Lesson_5.Seminar.homework.User;
+import OOP.Lesson_5.Seminar.homework.mapper.UserMapper;
+import OOP.Lesson_5.Seminar.homework.model.Fields;
+
 public class RepositoryFile implements Repository {
     private UserMapper mapper;
-    private Operation Operation;
+    private OOP.Lesson_5.Seminar.homework.model.Operation Operation;
+    private User user;
 
-    public RepositoryFile(Operation Operation) {
+    public RepositoryFile(OOP.Lesson_5.Seminar.homework.model.Operation Operation) {
         this(Operation, new UserMapper());
     }
 
-    public RepositoryFile(Operation Operation, UserMapper userMapper) {
-        this.Operation = Operation;
+    public RepositoryFile(OOP.Lesson_5.Seminar.homework.model.Operation operation2, UserMapper userMapper) {
+        this.Operation = operation2;
         this.mapper = userMapper;
     }
 
-    public void deleteUser(User user){
+    public void deleteUser (User user){
         List<String> lines = Operation.readAllLines();
         List<User> users = new ArrayList<>();
         for (String line : lines) {
@@ -98,5 +103,22 @@ public class RepositoryFile implements Repository {
         }
         Operation.saveAllLines(lines);
         return id;
+    }
+
+    @Override
+    public String CreateUser(User user) {
+        this.user = user;
+        throw new UnsupportedOperationException("Unimplemented method 'CreateUser'");
+    }
+
+    @Override
+    public void UpdateUser(User user, Fields field, String param) {
+        throw new UnsupportedOperationException("Unimplemented method 'UpdateUser'");
+    }
+
+  
+    @Override
+    public void deleteUser(User user) {
+        throw new UnsupportedOperationException("Unimplemented method 'deleteUser'");
     }
 }
