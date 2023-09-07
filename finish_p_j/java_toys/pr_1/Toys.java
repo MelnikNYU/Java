@@ -37,6 +37,10 @@ public class Toys {
         this.weight = weight;
     }
 
+    public String getId() {
+        return id;
+    }
+
     public String getWeight() {
         return weight;
     }
